@@ -1,0 +1,105 @@
+/* Background setup for the entire body */
+*{
+  background-color: violet;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  text-align: center;
+  background-image: url('pic.png');
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay to improve text readability */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Centered content container */
+#homepage, #guidelines, #game, #gameOver {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2; /* Bring to front above overlay */
+}
+
+/* Headings */
+h1, h2, p {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background: none;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Buttons */
+.btn, .option-btn {
+  padding: 12px 24px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.option-btn:hover, .btn:hover {
+  background-color: #3e8e41;
+}
+
+.selected {
+  background-color: #ffd700 !important;
+  color: black;
+}
+
+/* Options styling */
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#scoreDisplay, #score, #finalScore, #question, #options, #timer{
+  font-size: 1.2rem;
+  margin-top: 20px;
+  background: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Position adjustments */
+#homepage h1, #guidelines h2, #game h2 {
+  font-size: 2rem;
+}
+
+ul li {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  background: none;
+}
+
+ul{
+  background: none;
+}
